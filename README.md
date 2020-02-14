@@ -11,3 +11,6 @@ Composé de deux phases, chaque joueur doit dans un premier temps placer ses cin
 Puis lors de la seconde phase, ils choisissent  chacun à leur tour une position sur laquelle attaquer la map adverse.
 
 Le premier qui détruit la totalité des bateaux adverses gagne la partie.
+
+
+-->Le même programme réalisé avec des types d'enregistrements a été ajouté dans le dépôt distant
