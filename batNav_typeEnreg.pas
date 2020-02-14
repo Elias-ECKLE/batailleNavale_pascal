@@ -618,7 +618,7 @@ BEGIN
     sousMarin.nom:=' sous marin';
     torpilleur.nom:='torpilleur';
 
-    map.nbCasesNavires:=17;
+    map.nbCasesNavires:=2;
 
     writeln(croiseur.taille);
     writeln(torpilleur.taille);
@@ -713,11 +713,11 @@ BEGIN
         clrscr;
 
         //tirs du joueur2 sur map du joueur 1
-        affichMap(joueur2.suiviMap);
+        affichMap(joueur1.suiviMap);
         gotoxy(27,5);
         writeln('Ou voulez-vous attaquer, tres cher(e) ',joueur2.nom,' ?');
         joueur1.map:=tirMap(joueur1.map); //fct qui appelle d'autres fcts permettant de tirer sur la map du joueur 1
-        joueur2.suiviMap:=suiviTirMap(joueur1.map, joueur1.suiviMap);  //map de suvi de tirs(reussis) mise a jour et affichage de cette derniere
+        joueur1.suiviMap:=suiviTirMap(joueur1.map, joueur1.suiviMap);  //map de suvi de tirs(reussis) mise a jour et affichage de cette derniere
         affichMap(joueur1.suiviMap);
         joueur2.victoire:=estVictoire(joueur1.map, map.nbCasesNavires); //booleen permettant de savoir si le joueur 2 a gagné la partie ou non
         readln;
@@ -742,7 +742,7 @@ BEGIN
         gotoxy(33,13);
         writeln('Félicitation ',joueur2.nom,', vous  gagnez la partie');
         end
-    else if joueur1.victoire=true and joueur2.victoire=true   then
+    else if joueur1.victoire=true and joueur2.victoire=true then
         begin
         gotoxy(33,13);
             writeln('Egalite parfaite entre les deux joueurs. Tous les deux sont vainqueurs');

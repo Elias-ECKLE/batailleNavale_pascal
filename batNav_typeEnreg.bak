@@ -626,12 +626,12 @@ BEGIN
     joueur1.nb:=1;
     joueur1.nom:=' ';
     joueur1.map:=mapA_vide(joueur1.map, carVide);
-    joueur1.suiviMap:=mapA_vide(joueur1.mapSuivi, carVide);
+    joueur1.suiviMap:=mapA_vide(joueur1.suiviMap, carVide);
     joueur1.victoire:=false;
     joueur2.nb:=2;
     joueur2.nom:=' ';
     joueur2.map:=mapA_vide(joueur2.map, carVide);
-    joueur2.suiviMap:=mapA_vide(joueur2.mapSuivi,carVide);
+    joueur2.suiviMap:=mapA_vide(joueur2.suiviMap,carVide);
     joueur2.victoire:=false;
 
 
@@ -668,10 +668,10 @@ BEGIN
     readln;
     clrscr;
         //appel des fcts qui permettent la mise en place de chaque navire sur la map
-    joueur1.map:=initMap(joueur1.map, carVide, sousMarin.nom, sousMarin.taille);
+    {joueur1.map:=initMap(joueur1.map, carVide, sousMarin.nom, sousMarin.taille);
     joueur1.map:=initMap(joueur1.map, carVide, croiseur.nom, croiseur.taille);
     joueur1.map:=initMap(joueur1.map, carVide, porteAvion.nom, porteAvion.taille);
-    joueur1.map:=initMap(joueur1.map, carVide, contreCroiseur.nom, contreCroiseur.taille);
+    joueur1.map:=initMap(joueur1.map, carVide, contreCroiseur.nom, contreCroiseur.taille);}
     joueur1.map:=initMap(joueur1.map, carVide, torpilleur.nom, torpilleur.taille);
     readln;
     clrscr;
@@ -685,9 +685,9 @@ BEGIN
     readln;
     clrscr;
         //appel des fcts qui permettent la mise en place de chaque navire sur la map
-   joueur2.map:=initMap(joueur2.map, carVide, porteAvion.nom, porteAvion.taille);
+   {joueur2.map:=initMap(joueur2.map, carVide, porteAvion.nom, porteAvion.taille);
    joueur2.map:=initMap(joueur2.map, carVide, croiseur.nom, croiseur.taille);
-   joueur2.map:=initMap(joueur2.map, carVide, contreCroiseur.nom, contreCroiseur.taille);
+   joueur2.map:=initMap(joueur2.map, carVide, contreCroiseur.nom, contreCroiseur.taille);}
    joueur2.map:=initMap(joueur2.map, carVide, sousMarin.nom, sousMarin.taille);
    joueur2.map:=initMap(joueur2.map, carVide, torpilleur.nom, torpilleur.taille);
     readln;
@@ -713,11 +713,11 @@ BEGIN
         clrscr;
 
         //tirs du joueur2 sur map du joueur 1
-        affichMap(joueur2.suiviMap);
+        affichMap(joueur1.suiviMap);
         gotoxy(27,5);
         writeln('Ou voulez-vous attaquer, tres cher(e) ',joueur2.nom,' ?');
         joueur1.map:=tirMap(joueur1.map); //fct qui appelle d'autres fcts permettant de tirer sur la map du joueur 1
-        joueur2.suiviMap:=suiviTirMap(joueur1.map, joueur1.suiviMap);  //map de suvi de tirs(reussis) mise a jour et affichage de cette derniere
+        joueur1.suiviMap:=suiviTirMap(joueur1.map, joueur1.suiviMap);  //map de suvi de tirs(reussis) mise a jour et affichage de cette derniere
         affichMap(joueur1.suiviMap);
         joueur2.victoire:=estVictoire(joueur1.map, map.nbCasesNavires); //booleen permettant de savoir si le joueur 2 a gagné la partie ou non
         readln;
