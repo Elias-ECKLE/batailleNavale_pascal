@@ -1,7 +1,9 @@
 # batailleNavale_pascal
 bataille navale réalisée en pascal
 
-Pour lancer le programme, cliquez sur l'exécutable batnav_sanstypeeregi.exe puis suivez les instructions notées à l'écran. Si ce dernier reste noir, appuyez sur entrer pour passer à la suite.
+Executable téléchargeable au lien suivant : https://github.com/Elias-ECKLE/batailleNavale_pascal/releases/tag/executable
+
+Pour lancer le programme depuis la branche, cliquez sur l'exécutable batnav_sanstypeeregi.exe une fois le dossier téléchargé puis suivez les instructions notées à l'écran. Si ce dernier reste noir, appuyez sur entrer pour passer à la suite.
 
 
 
